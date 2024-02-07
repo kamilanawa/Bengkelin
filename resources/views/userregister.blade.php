@@ -76,6 +76,15 @@
                         <div id="alamatHelp" class="form-text">{{ $message }}</div>
                     @enderror
                 </div>
+                <div class="mb-3">
+                    <label for="link" class="form-label">Link Alamat</label>
+                    <input type="url" class="form-control @error('link') is-invalid @enderror" name="link"
+                        id="link" aria-describedby="linkHelp" value="{{ old('link') }}">
+                        <p class="text-secondary">Masukan link sesuai dengan Alamat kamu.</p>
+                    @error('link')
+                        <div id="linkHelp" class="form-text">{{ $message }}</div>
+                    @enderror
+                </div>
 
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>

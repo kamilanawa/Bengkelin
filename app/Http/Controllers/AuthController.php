@@ -40,6 +40,7 @@ class AuthController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'password_confirmation' => 'required',
             'phone_number' => ['required', 'numeric', 'digits:12'],
+            'link' => ['required'],
             'alamat' => ['required', 'string', 'max:100'],
         ], [
             'required' => ':attribute wajib di isi',
@@ -62,6 +63,7 @@ class AuthController extends Controller
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
                 'alamat' => $request->alamat,
+                'link' => $request->link,
                 'phone_number' => $request->phone_number,
             ]);
             Auth::login($user);

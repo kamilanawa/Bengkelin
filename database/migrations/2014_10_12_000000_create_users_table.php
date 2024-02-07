@@ -20,6 +20,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->bigInteger('phone_number');
             $table->longText('alamat');
+            $table->longText('link');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

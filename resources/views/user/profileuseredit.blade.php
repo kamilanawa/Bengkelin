@@ -60,6 +60,16 @@
                             </div>
                         @enderror
                     </div>
+                    <div class="form">
+                        <label for="link" class="form-label">Alaamat link</label>
+                        <input type="text" class="form-control" id="link" name="link"
+                            value="{{ $users->link }}">
+                        @error('link')
+                            <div class="invalid-feedback">
+                                Link tidak boleh kosong
+                            </div>
+                        @enderror
+                    </div>
                     <div class="action-user d-flex justify-content-end align-items-center">
                         <button type="submit" class="btn btn-primary mt-3">Submit</button>
                     </div>

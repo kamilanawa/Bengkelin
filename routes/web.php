@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\AdminController;
-use Illuminate\Support\Facades\Route;
+// use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{AuthController, BengkelController, BookingController, LayananController, JadwalController, ProfileUserController, ServiceController, TransaksiController};
-
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
