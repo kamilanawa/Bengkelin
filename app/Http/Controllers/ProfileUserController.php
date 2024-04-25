@@ -46,6 +46,7 @@ class ProfileUserController extends Controller
             'email' => 'string',
             'phone_number' => 'string',
             'alamat' => 'string',
+            'link' => 'string'
             // 'image' => 'required|mimes:jpg,jpeg,png|max:5120'
         ]);
 
@@ -56,6 +57,7 @@ class ProfileUserController extends Controller
             'email' => $validated['email'],
             'phone_number' => $validated['phone_number'],
             'alamat' => $validated['alamat'],
+            'link' => $validated['link'] 
             // 'image' => $newImage['image']
         ]);
 

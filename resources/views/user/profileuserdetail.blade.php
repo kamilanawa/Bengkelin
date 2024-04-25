@@ -38,6 +38,11 @@
                         <input type="text" class="form-control" id="alamat" name="alamat"
                             value="{{ $users->alamat }}" disabled>
                     </div>
+                    <div class="form">
+                        <label for="link" class="form-label">Alamat link</label>
+                        <input type="text" class="form-control" id="link" name="link"
+                            value="{{ $users->link }}" disabled>
+                    </div>
                     <div class="action-user d-flex justify-content-end align-items-center">
                         <a href="/profileuser/{{ $users->id }}/edit"
                             class="btn btn-lg btn-warning text-white fw-bold mx-3">Ubah</a>
