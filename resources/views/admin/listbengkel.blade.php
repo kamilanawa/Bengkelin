@@ -23,6 +23,7 @@
                         <th scope="col">No.</th>
                         <th scope="col">Name</th>
                         <th scope="col">Image</th>
+                        <th scope="col">Rating</th>
                         <th scope="col">Alamat</th>
                         <th scope="col">Action</th>
                     </tr>
@@ -38,6 +39,10 @@
                             </td>
                             <td>
                                 <img src="{{ asset('images/' . $item->image) }}" alt="" style="width: 10rem">
+                            </td>
+                            <td>
+                                <p class="card-text"><i class="fas fa-star" style="color: #FFD600"></i><small
+                                    class="text-muted">{{ $item->rating }}</small></p>
                             </td>
                             <td>
                                 <p>{{ $item->alamat }}</p>

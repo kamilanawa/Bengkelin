@@ -14,11 +14,12 @@ class ServiceController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->keyword;
-
+        // $bengkel = Bengkel::all();
         $bengkel = Bengkel::where('name', 'LIKE', '%' . $keyword . '%')
             ->orWhere('alamat', 'LIKE', '%' . $keyword . '%')->with('booking')->paginate(10); // menambahkan keyword with booking untuk menampilkan rating dari booking
 
-
+        // dd($bengkel);
+            
         // menambahkan rating untuk tiap bengkel
         $bengkel->map(function ($bengkel) {
             $bengkel->rating = number_format($bengkel->booking->avg('rating'), 2);  // fungsi avg untuk menghitung rata-rata rating dan fungsi number_format untuk membulatkan angka menjadi 2 angka dibelakang koma

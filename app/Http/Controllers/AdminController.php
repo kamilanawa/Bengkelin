@@ -45,8 +45,19 @@ class AdminController extends Controller
         $userCount = User::count();
         $bengkelCount = Bengkel::count();
         $ownerCount = PemilikBengkel::count();
-        $data['bengkels'] = Bengkel::all();
-        return view('admin/listbengkel', $data, ['owners_count' => $ownerCount, 'users_count' => $userCount, 'bengkels_count' => $bengkelCount]);
+        // $keyword = '-';
+        $bengkel = Bengkel::with('booking')->get();
+        $bengkel->map(function($bengkel){
+            $bengkel->rating = number_format($bengkel->booking->avg('rating'),2);
+            return $bengkel->rating;
+        });
+    
+        return view('admin/listbengkel' ,[
+            'owners_count' => $ownerCount, 
+            'users_count' => $userCount, 
+            'bengkels_count' => $bengkelCount,
+            'bengkels' => $bengkel
+        ]);
     }
 
     public function detailuser($id)

@@ -37,6 +37,7 @@
                             <td><a href="/adminlistuser/{{ $item->id }}/delete"
                                     class="btn btn-danger text-white">Hapus</a>
                                 <a href="/detailuser/{{ $item->id }}" class="btn btn-warning text-white">Detail</a>
+                                <a href="{{$item->link}}" class="btn btn-primary text-white">Lihat Lokasi</a>
                             </td>
                         </tr>
                     @endforeach
