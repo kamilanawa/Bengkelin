@@ -9,12 +9,12 @@
         <div class="container">
 
             <div class="section-title">
-                <h2>Our Team</h2>
+                <h2>Tentang Bengkelin</h2>
                 <div class="underline"></div>
-                <p>Kelompok 6 Alias Rangkong, para peserta Studi Independen dari mitra PT GITS Indonesia</p>
+                <p>Bengkelin adalah...</p>
             </div>
 
-            <div class="row ">
+            <!-- <div class="row ">
 
 
                 <div class="col-lg-6">
@@ -107,7 +107,7 @@
                     </div>
                 </div>
 
-            </div>
+            </div> -->
 
         </div>
     </section><!-- End Team Section -->
