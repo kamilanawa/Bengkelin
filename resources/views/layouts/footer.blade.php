@@ -16,9 +16,7 @@
                 <a href="{{ url('/servicepage') }}" class="text-white-50 mt-2">
                     Service
                 </a>
-                <a href="{{ url('/aboutpage') }}" class="text-white-50 mt-2">
-                    About Us
-                </a>
+                
                 @guest
                     <a href="{{ route('login') }}" class="text-white-50 mt-2">
                         Login

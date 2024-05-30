@@ -15,9 +15,7 @@
                 <li class="nav-item mx-2">
                     <a class="nav-link" href="{{ url('servicepage') }}">Services</a>
                 </li>
-                <li class="nav-item mx-2">
-                    <a class="nav-link" href="{{ url('aboutpage') }}">About Us</a>
-                </li>
+                
                 @auth
                     <li class="nav-item mx-2">
                         <a class="nav-link" href="{{ url('profilekendaraan') }}">Kendaraan</a>

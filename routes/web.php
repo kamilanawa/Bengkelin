@@ -20,9 +20,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('user.landingpage');
 });
-Route::get('/aboutpage', function () {
-    return view('aboutus');
-});
+// Route::get('/aboutpage', function () {
+//     return view('aboutus');
+// });
 
 // AUTH
 Route::get('/login', [AuthController::class, 'login'])->name('login');
