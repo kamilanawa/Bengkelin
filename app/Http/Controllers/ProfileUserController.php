@@ -57,7 +57,7 @@ class ProfileUserController extends Controller
             'email' => $validated['email'],
             'phone_number' => $validated['phone_number'],
             'alamat' => $validated['alamat'],
-            'link' => $validated['link'] 
+            'link' => $validated['link']
             // 'image' => $newImage['image']
         ]);
 
@@ -159,7 +159,9 @@ class ProfileUserController extends Controller
         $idUser = $user->id;
 
         $booking = Booking::with(['kendaraan', 'user', 'bengkel'])
-            ->where('user_id', $idUser)->orderBy('id', 'desc')->paginate(4);
+            ->where('user_id', $idUser)
+            ->orderBy('id', 'desc') // kode ini sama dengan ->latest()
+            ->paginate(4);
 
         $detail_booking = DetailLayananBooking::with(['booking', 'layanan'])->get();
         // dd($detail_booking);

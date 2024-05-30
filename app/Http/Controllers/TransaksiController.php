@@ -22,7 +22,9 @@ class TransaksiController extends Controller
         });
 
         $transaksi = Booking::with(['kendaraan', 'user', 'bengkel', 'layanans', 'detail_layanan_bookings'])
-            ->whereIn('bengkel_id', $bengkel_ids)->get();
+            ->whereIn('bengkel_id', $bengkel_ids)
+            ->latest()
+            ->get();
         return view('mitra/bengkel/transaksi', ['bookings' => $transaksi], $item);
     }
 
@@ -60,12 +62,31 @@ class TransaksiController extends Controller
             'status' => 'required'
         ]);
 
+        // menambahkan kondisi, jika yang dipilih adalah status ditolak maka buat validasi keterangan menjadi required
+        if ($request->status == 'Ditolak') {
+            $validated = $request->validate([
+                'status' => 'required',
+                'keterangan' => 'required'
+            ]);
+
+            // update status dan keterangan
+            Booking::where('id', $id)->update([
+                'status' => $validated['status'],
+                'keterangan' => $validated['keterangan']
+            ]);
+            // tampilkan alert
+            Alert::success('Berhasil', 'Status Berhasil Diubah!');
+            // kembali ke halaman sebelumnya
+            return redirect()->back();
+        }
+
         if ($validated['status'] == 'Selesai') {
             return redirect()->to('owner/transaksi/' . $id . '/edit/gambar');
         }
 
         Booking::where('id', $id)->update([
-            'status' => $validated['status']
+            'status' => $validated['status'],
+            'keterangan' => null
         ]);
         Alert::success('Berhasil', 'Status Berhasil Diubah!');
         return redirect()->back();
