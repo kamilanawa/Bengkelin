@@ -37,7 +37,7 @@
     <div class="vh-100 p-5 d-flex justify-content-center align-items-center">
         <div class="login-box p-5">
             <div class="title mb-3">
-                <img src="{{ asset('images/logo.png') }}">
+                <img src="{{ asset('logo.png') }}">
                 <p class="text-secondary text-center">Masukan Email Dan Password</p>
                 @if ($errors->any())
                     <div class="alert alert-danger">

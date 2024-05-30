@@ -42,6 +42,7 @@
                                     <tr>
                                         <th scope="col">Nama User</th>
                                         <th scope="col">Alamat User</th>
+                                        <th scope="col">No HP User</th>
                                         {{-- <th scope="col">Link Maps Alamat</th> --}}
                                         <th scope="col">Catatan Tambahan</th>
                                     </tr>
@@ -53,6 +54,9 @@
                                         </td>
                                         <td>
                                             <p>{{ $bookings->user->alamat }}</p>
+                                        </td>
+                                        <td>
+                                            <p>{{ $bookings->user->phone_number }}</p>
                                         </td>
                                         {{-- <td>
                                             <a style="text-decoration:none" href="{{ $bookings->user->link}}">Lihat di Peta >>></a>

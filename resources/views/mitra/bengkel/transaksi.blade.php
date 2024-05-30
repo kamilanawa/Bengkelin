@@ -25,6 +25,7 @@
                                 <th>Kendaraan</th>
                                 <th>Nama Bengkel</th>
                                 <th>Alamat pelanggan</th>
+                                <th>Keterangan</th>
                                 <th>Action</th>
 
                             </tr>
@@ -40,11 +41,12 @@
                                     <td>{{ $item->kendaraan->model }}</td>
                                     <td>{{ $item->bengkel->name }}</td>
                                     <td>{{ $item->user->alamat }}</td>
+                                    <td>{{ $item->keterangan ?? '-' }}</td>
                                     <td>
                                         <a href="transaksi/{{ $item->id }}/edit" class="btn btn-sm btn-info">Edit</a>
                                         <a href="transaksi/{{ $item->id }}" class="btn btn-sm btn-warning">Detail
                                             Transaksi</a>
-                                        <a href="{{$item->user->link}}" class="btn btn-sm btn-danger">Lihat lokasi</a>
+                                        <a href="{{ $item->user->link }}" class="btn btn-sm btn-danger">Lihat lokasi</a>
                                     </td>
                                 </tr>
                             @endforeach

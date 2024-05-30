@@ -37,6 +37,17 @@
                     </div>
                 @enderror
             </div>
+            {{-- menambahkan form baru untuk keterangan, dan hanya tampil ketika memilih status ditolak --}}
+            <div class="mb-3 form" id="box-keterangan" @if ($bookings->status->name != 'Ditolak') style="display: none" @endif>
+                <label for="keterangan" class="form-label">Keterangan</label>
+                <textarea class="form-control @error('keterangan') is-invalid @enderror" id="keterangan" name="keterangan"
+                    rows="3">{{ $bookings->keterangan }}</textarea>
+                @error('keterangan')
+                    <div class="invalid-feedback">
+                        Keterangan tidak boleh kosong
+                    </div>
+                @enderror
+            </div>
             <div class="action-user d-flex justify-content-end align-items-center">
                 <button type="submit" class="btn btn-primary mt-3">Submit</button>
             </div>
@@ -45,5 +56,18 @@
     </div>
     </div>
     @include('sweetalert::alert')
+    {{-- menambahkan jaascript untuk secara kondisional menyembunyikan input keterangan --}}
+    <script>
+        const status = document.getElementById('status');
+        const keterangan = document.getElementById('box-keterangan');
+
+        status.addEventListener('change', function() {
+            if (status.value == 'Ditolak') {
+                keterangan.style.display = 'block';
+            } else {
+                keterangan.style.display = 'none';
+            }
+        });
+    </script>
 
 @endsection
