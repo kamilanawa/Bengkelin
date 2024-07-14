@@ -51,10 +51,10 @@ class AdminController extends Controller
             $bengkel->rating = number_format($bengkel->booking->avg('rating'),2);
             return $bengkel->rating;
         });
-    
+
         return view('admin/listbengkel' ,[
-            'owners_count' => $ownerCount, 
-            'users_count' => $userCount, 
+            'owners_count' => $ownerCount,
+            'users_count' => $userCount,
             'bengkels_count' => $bengkelCount,
             'bengkels' => $bengkel
         ]);

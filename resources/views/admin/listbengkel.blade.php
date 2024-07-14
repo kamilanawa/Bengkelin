@@ -25,6 +25,7 @@
                         <th scope="col">Image</th>
                         <th scope="col">Rating</th>
                         <th scope="col">Alamat</th>
+                        <th scope="col">Link</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -46,6 +47,9 @@
                             </td>
                             <td>
                                 <p>{{ $item->alamat }}</p>
+                            </td>
+                            <td>
+                                <a href="{{ $item->link_alamat }}" target="_blank">{{ $item->link_alamat }}</a>
                             </td>
                             <td><a href="/adminlistbengkel/{{ $item->id }}/delete"
                                     class="btn btn-danger text-white">Hapus</a>

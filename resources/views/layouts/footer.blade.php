@@ -25,18 +25,21 @@
             </div>
             <div class="col col-lg-3 d-flex flex-column mb-lg-0 mb-4">
                 <h5 class="fw-bold text-white mb-3">Contact</h5>
-                <a href="https://www.instagram.com/bengkelin.official" class="text-white-50 mt-2">
+                <a href="https://www.instagram.com/nawaamila?igsh=MWkzbmFuZXVyanloeQ==" class="text-white-50 mt-2">
                     Our Instagram
                 </a>
                 <a href="https://github.com/kamilanawa" class="text-white-50 mt-2">
                     Our Github
+                </a>
+                <a href="https://wa.me/6285600353848" class="text-white-50 mt-2">
+                    Our Contact Person
                 </a>
                 <p class="text-white-50 mt-2">Indonesia</p>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <p class="text-white text-center copytext">&copy; Copyright 2023 Bengkelin.Official, All Right Reserved.</p>
+                <p class="text-white text-center copytext">&copy; Copyright 2024 Bengkelin.Official, All Right Reserved.</p>
             </div>
         </div>
     </div>
